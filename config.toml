@@ -1,0 +1,5 @@
+log_level = "trace"
+database_host = "172.17.0.1"
+database_port = 5432
+database_name = "rustwebdev"
+port = 3033
