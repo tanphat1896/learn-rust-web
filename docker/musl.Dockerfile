@@ -1,4 +1,4 @@
-FROM rust:latest as builder
+FROM rust:1.75.0 as builder
 
 RUN rustup target add x86_64-unknown-linux-musl
 RUN apt -y update

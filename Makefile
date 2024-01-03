@@ -46,3 +46,6 @@ apilayer:
 
 docker_u2004:
 	docker build -t hellorust -f docker/ubuntu_20_04.Dockerfile .
+
+docker_musl:
+	docker build -t hellorust -f docker/musl.Dockerfile .
