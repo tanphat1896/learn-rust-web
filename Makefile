@@ -49,3 +49,9 @@ docker_u2004:
 
 docker_musl:
 	docker build -t hellorust -f docker/musl.Dockerfile .
+
+up:
+	docker compose -f docker/docker-compose.yml up -d
+
+down:
+	docker compose -f docker/docker-compose.yml down

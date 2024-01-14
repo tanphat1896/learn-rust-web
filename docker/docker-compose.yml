@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:14
+    restart: always
+    healthcheck:
+      test: /usr/bin/pg_isready
+      interval: 5s
+      timeout: 10s
+      retries: 3
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: rustwebdev
+
+  app:
+    image: hellorust
+    restart: always
+    environment:
+      DB_URL: postgres://dev:dev@db:5432/rustwebdev
+    depends_on:
+      - db
+    ports:
+      - 3030:3033
